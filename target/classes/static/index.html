@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Dog Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <nav>
+            <div class="nav-container">
+                <h1>HTTP Dog Manager</h1>
+                <div id="auth-buttons">
+                    <button id="login-btn">Login</button>
+                    <button id="signup-btn">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Login/Signup Form -->
+            <div id="auth-forms" class="hidden">
+                <div id="login-form">
+                    <h2>Login</h2>
+                    <form id="login-form-element">
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <div id="signup-form" class="hidden">
+                    <h2>Sign Up</h2>
+                    <form id="signup-form-element">
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <input type="password" placeholder="Confirm Password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div id="search-section" class="hidden">
+                <h2>Search HTTP Status Codes</h2>
+                <div class="search-container">
+                    <input type="text" id="status-code-input" placeholder="Enter status code (e.g., 200, 2xx, 20x)">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div id="results-container"></div>
+                <div id="save-list-section" class="hidden">
+                    <input type="text" id="list-name" placeholder="Enter list name">
+                    <button id="save-list-btn">Save List</button>
+                </div>
+            </div>
+
+            <!-- Saved Lists Section -->
+            <div id="saved-lists" class="hidden">
+                <h2>Your Saved Lists</h2>
+                <div id="lists-container"></div>
+            </div>
+
+            <!-- Edit List Modal -->
+            <div id="edit-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2>Edit List</h2>
+                    <input type="text" id="edit-list-name" placeholder="List Name">
+                    <div id="edit-codes-container"></div>
+                    <div class="add-code-section">
+                        <input type="text" id="add-code-input" placeholder="Add status code">
+                        <button id="add-code-btn">Add Code</button>
+                    </div>
+                    <div class="modal-buttons">
+                        <button id="save-edit-btn">Save Changes</button>
+                        <button id="close-edit-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View List Modal -->
+            <div id="view-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2 id="view-list-name"></h2>
+                    <p id="view-list-date"></p>
+                    <div id="view-codes-container"></div>
+                    <div class="modal-buttons">
+                        <button id="edit-view-btn">Edit List</button>
+                        <button id="close-view-btn">Close</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/lists.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
